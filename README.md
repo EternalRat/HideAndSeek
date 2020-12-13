@@ -20,5 +20,7 @@ As normal player, you'll just need to hide from the hunter by becoming invisible
 ## [🔨 How to use it 🔨]
 
 Easy, just put this plugin into your "plugin" folder.
+
 Then, invite your friends for playing with you.
+
 If you're ready, just write "/start" !
