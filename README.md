@@ -1,6 +1,6 @@
 # HideAndSeek
 
-Completion : <progress max="100" value="10"> 10% </progress>
+Completion : <progress max="100" value="20"> 20% </progress>
 
 ## [📖 Presentation 📖]
 

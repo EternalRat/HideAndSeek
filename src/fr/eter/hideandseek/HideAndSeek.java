@@ -6,6 +6,8 @@ import java.util.List;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import fr.eter.hideandseek.GStates;
+
 public class HideAndSeek extends JavaPlugin {
 
 	/**
@@ -16,6 +18,10 @@ public class HideAndSeek extends JavaPlugin {
 	 * Player marked as the hunter
 	 */
 	private Player hunter = null;
+	/**
+	 * Game states
+	 */
+	private GStates states;
 	
 	/**
 	 * On function
@@ -36,6 +42,26 @@ public class HideAndSeek extends JavaPlugin {
 	}
 	
 	/**
+	 * Set a new state to the game
+	 * 
+	 * @param states	States contained by GStates enum
+	 */
+	public void setState(GStates states) {
+		this.states = states;
+	}
+	
+	/**
+	 * Compare the two states
+	 * 
+	 * @param states	States which need to be check
+	 * @return	boolean type : true/false
+	 */
+	public boolean isState(GStates states) {
+		return this.states == states;
+	}
+	
+	
+	/**
 	 * Getter Method
 	 * 
 	 * Return a specific player from the list
@@ -46,6 +72,14 @@ public class HideAndSeek extends JavaPlugin {
 		return players.get(players.indexOf(player));
 	}
 	
+	/**
+	 * Check if the player is inside the list
+	 * @param player
+	 * @return
+	 */
+	public boolean isPlayerInTheList(Player player) {
+		return (players.contains(player));
+	}
 	/**
 	 * Getter Method
 	 * Get the whole list of players
