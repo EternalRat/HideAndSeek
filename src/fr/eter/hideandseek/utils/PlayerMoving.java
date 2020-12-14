@@ -10,10 +10,6 @@ public class PlayerMoving extends JavaPlugin {
 	
 	private Map<Player, Integer> moveTimer = new HashMap<Player, Integer>();
 	
-	public PlayerMoving() {
-		
-	}
-	
 	public Integer getTimer(Player player) {
 		return (moveTimer.get(player));
 	}

@@ -10,6 +10,8 @@ import org.bukkit.event.player.PlayerJoinEvent;
 
 import fr.eter.hideandseek.HideAndSeek;
 import fr.eter.hideandseek.manager.task.GAutoStart;
+import fr.eter.hideandseek.utils.PlayerManager;
+import fr.eter.hideandseek.utils.StateManager;
 import fr.eter.hideandseek.GStates;
 
 public class OnJoin implements Listener {
@@ -33,19 +35,19 @@ public class OnJoin implements Listener {
 		player.teleport(spawn);
 		player.getInventory().clear();
 		
-		if (!this.main.isState(GStates.WAITING)) {
+		if (!StateManager.isState(GStates.WAITING)) {
 			player.setGameMode(GameMode.SPECTATOR);
 			player.sendMessage("The game already started.");
 			e.setJoinMessage(null);
 			return;
 		}
 		
-		if (!this.main.isPlayerInTheList(player)) this.main.setPlayerInList(player);
+		if (!PlayerManager.isPlayerInTheList(player)) PlayerManager.setPlayerInList(player);
 		Bukkit.broadcastMessage("§7[§cHIDE AND SEEK MINECRAFT VERSION§7]§r " + player.getName() + " has joined the game.");
-		if (this.main.isState(GStates.WAITING) && this.main.getPlayerList().size() >= 10) {
-			GAutoStart start = new GAutoStart(main);
-			start.runTaskTimer(main, 0, 20);
-			main.setState(GStates.LAUNCH);
+		if (StateManager.isState(GStates.WAITING) && PlayerManager.getPlayerList().size() >= 10) {
+			GAutoStart start = new GAutoStart(this.main);
+			start.runTaskTimer(this.main, 0, 20);
+			StateManager.setState(GStates.LAUNCH);
 		}
 	}
 
