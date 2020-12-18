@@ -8,13 +8,41 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class PlayerMoving extends JavaPlugin {
 	
-	private Map<Player, Integer> moveTimer = new HashMap<Player, Integer>();
+	private static Map<Player, Long> moveTimer = new HashMap<Player, Long>();
 	
-	public Integer getTimer(Player player) {
+	/**
+	 * Get the timer for the specified player
+	 * @param player
+	 * @return
+	 */
+	public static Long getTimer(Player player) {
 		return (moveTimer.get(player));
 	}
 	
-	public void setTimer(Player player, Integer timer) {
+	/**
+	 * Check if the player is in the list
+	 * @param player
+	 * @return
+	 */
+	public static boolean isInList(Player player) {
+		return moveTimer.containsKey(player);
+	}
+	
+	/**
+	 * Create the timer
+	 * @param player
+	 * @param timer
+	 */
+	public static void setTimer(Player player, Long timer) {
 		moveTimer.put(player, timer);
+	}
+	
+	/**
+	 * Replace the timer
+	 * @param player
+	 * @param timer
+	 */
+	public static void replaceTimer(Player player, Long timer) {
+		moveTimer.replace(player, timer);
 	}
 }

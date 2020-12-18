@@ -1,6 +1,6 @@
 # HideAndSeek
 
-Completion : <progress max="100" value="20"> 20% </progress>
+Completion : <progress max="100" value="95"> 95% </progress> (manque le GUI pour les sons + en phase de test)
 
 ## [📖 Presentation 📖]
 

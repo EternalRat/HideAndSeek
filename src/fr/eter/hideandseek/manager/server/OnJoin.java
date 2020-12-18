@@ -31,7 +31,7 @@ public class OnJoin implements Listener {
 	public void onJoin(PlayerJoinEvent e) {
 		Player player = e.getPlayer();
 		player.sendTitle("Welcome", "Hide And Seek made by EternalRat", 10, 80, 20);
-		Location spawn = new Location(player.getWorld(), 91.815, 4, -37.031, 90f, -0.9f);
+		Location spawn = new Location(player.getWorld(), 25.0, 5, 25.0);
 		player.teleport(spawn);
 		player.getInventory().clear();
 		

@@ -15,7 +15,10 @@ public class PlayerManager {
 	 * Player marked as the hunter
 	 */
 	private static Player hunter = null;
-	
+	/**
+	 * List of dead player
+	 */
+	private static List<Player> dPlayers = new ArrayList<Player>();
 	/**
 	 * Getter Method
 	 * 
@@ -44,6 +47,15 @@ public class PlayerManager {
 	public static List<Player> getPlayerList() {
 		return (players);
 	}
+	/**
+	 * Getter Method
+	 * Get the whole list of players
+	 * 
+	 * @return
+	 */
+	public static List<Player> getDeadPlayerList() {
+		return (dPlayers);
+	}
 	
 	/**
 	 * Setter method
@@ -53,6 +65,24 @@ public class PlayerManager {
 	 */
 	public static void setPlayerInList(Player player) {
 		players.add(player);
+	}
+	/**
+	 * Setter method
+	 * 
+	 * Set a player into the list
+	 * @param player
+	 */
+	public static void removePlayerInList(Player player) {
+		players.remove(player);
+	}
+	/**
+	 * Setter method
+	 * 
+	 * Set a player into the list
+	 * @param player
+	 */
+	public static void setDeadPlayerInList(Player player) {
+		dPlayers.add(player);
 	}
 	
 	/**
