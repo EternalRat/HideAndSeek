@@ -1,4 +1,4 @@
-package fr.eter.hideandseek.manager.server;
+package fr.eter.hideandseek.manager.server.members;
 
 import java.util.Arrays;
 

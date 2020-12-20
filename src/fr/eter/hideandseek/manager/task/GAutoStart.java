@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.bukkit.Bukkit;
+import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
@@ -50,6 +51,8 @@ public class GAutoStart extends BukkitRunnable {
 					meta.addEnchant(Enchantment.DAMAGE_ALL, 200, true);
 					item.setItemMeta(meta);
 					pl.getInventory().setItemInMainHand(item);
+					Location spawn = new Location(pl.getWorld(), 165.500, 4, 133.300);
+					pl.teleport(spawn);
 				} else {
 					pl.sendTitle("Human", "Try to live.", 10, 80, 20);
 					pl.addPotionEffect(PotionEffectType.SPEED.createEffect(99999, 3));

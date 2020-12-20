@@ -1,4 +1,4 @@
-package fr.eter.hideandseek.manager.server;
+package fr.eter.hideandseek.manager.server.interaction;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -37,6 +37,8 @@ public class OnInteract implements Listener {
 			soundInv.addItem(getItem(Material.FOX_SPAWN_EGG, "Renard"));
 			soundInv.addItem(getItem(Material.GHAST_SPAWN_EGG, "Ghast"));
 			soundInv.addItem(getItem(Material.WITCH_SPAWN_EGG, "Sorcière"));
+			soundInv.addItem(getItem(Material.WITHER_SKELETON_SKULL, "Wither"));
+			soundInv.addItem(getItem(Material.GLASS_BOTTLE, "Verre"));
 			
 			p.openInventory(soundInv);
 		}

@@ -1,4 +1,4 @@
-package fr.eter.hideandseek.manager.server;
+package fr.eter.hideandseek.manager.server.object;
 
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

@@ -5,12 +5,12 @@ import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import fr.eter.hideandseek.HideAndSeek;
-import fr.eter.hideandseek.manager.server.OnBreak;
-import fr.eter.hideandseek.manager.server.OnInteract;
-import fr.eter.hideandseek.manager.server.OnInv;
-import fr.eter.hideandseek.manager.server.OnJoin;
-import fr.eter.hideandseek.manager.server.OnLeave;
-import fr.eter.hideandseek.manager.server.OnMovement;
+import fr.eter.hideandseek.manager.server.interaction.OnInteract;
+import fr.eter.hideandseek.manager.server.interaction.OnInv;
+import fr.eter.hideandseek.manager.server.members.OnJoin;
+import fr.eter.hideandseek.manager.server.members.OnLeave;
+import fr.eter.hideandseek.manager.server.members.OnMovement;
+import fr.eter.hideandseek.manager.server.object.OnBreak;
 
 public class EventManager {
 	

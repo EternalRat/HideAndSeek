@@ -1,4 +1,4 @@
-package fr.eter.hideandseek.manager.server;
+package fr.eter.hideandseek.manager.server.interaction;
 
 import org.bukkit.Material;
 import org.bukkit.Sound;
@@ -25,10 +25,11 @@ public class OnInv implements Listener {
 			evt.setCancelled(true);
 			p.closeInventory();
 			Material[] materials = new Material[] {Material.DRAGON_EGG, Material.ENDERMAN_SPAWN_EGG, Material.DROWNED_SPAWN_EGG, Material.ZOMBIE_SPAWN_EGG, Material.WOLF_SPAWN_EGG, Material.BLAZE_SPAWN_EGG,
-					Material.CREEPER_SPAWN_EGG, Material.FOX_SPAWN_EGG, Material.GHAST_SPAWN_EGG, Material.WITCH_SPAWN_EGG};
+					Material.CREEPER_SPAWN_EGG, Material.FOX_SPAWN_EGG, Material.GHAST_SPAWN_EGG, Material.WITCH_SPAWN_EGG, Material.WITHER_SKELETON_SKULL, Material.GLASS_BOTTLE};
 			Sound[] sounds = new Sound[] {Sound.ENTITY_ENDER_DRAGON_AMBIENT, Sound.ENTITY_ENDERMAN_SCREAM, Sound.ENTITY_DROWNED_AMBIENT, Sound.ENTITY_ZOMBIE_AMBIENT, Sound.ENTITY_WOLF_AMBIENT, Sound.ENTITY_BLAZE_AMBIENT,
-					Sound.ENTITY_CREEPER_PRIMED, Sound.ENTITY_FOX_SCREECH, Sound.ENTITY_GHAST_AMBIENT, Sound.ENTITY_WITCH_AMBIENT};
+					Sound.ENTITY_CREEPER_PRIMED, Sound.ENTITY_FOX_SCREECH, Sound.ENTITY_GHAST_AMBIENT, Sound.ENTITY_WITCH_AMBIENT, Sound.ENTITY_WITHER_AMBIENT, Sound.ENTITY_EXPERIENCE_BOTTLE_THROW};
 			playSound(sounds[searchIndex(materials, item.getType())], p);
+			
 		}
 	}
 	
