@@ -8,7 +8,10 @@ public class OnBreak implements Listener {
 
 	@EventHandler
 	public void onBreakBlocks(BlockBreakEvent block) {
-		block.setCancelled(true);
+		if (!block.getPlayer().isOp()) {
+			System.out.println("Block détruit");
+			block.setCancelled(true);
+		}
 	}
 	
 }

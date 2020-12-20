@@ -6,45 +6,40 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import fr.eter.hideandseek.HideAndSeek;
 import fr.eter.hideandseek.manager.server.OnBreak;
+import fr.eter.hideandseek.manager.server.OnInteract;
+import fr.eter.hideandseek.manager.server.OnInv;
 import fr.eter.hideandseek.manager.server.OnJoin;
 import fr.eter.hideandseek.manager.server.OnLeave;
 import fr.eter.hideandseek.manager.server.OnMovement;
 
-public class EventManager extends JavaPlugin {
-	/**
-	 * main for constructor
-	 */
-	private HideAndSeek main;
-	
-	/**
-	 * Constructor for manager class
-	 * 
-	 * @param main
-	 */
-	public EventManager(HideAndSeek main) {
-		this.main = main;
-	}
+public class EventManager {
 	
 	/**
 	 * Listener manager
 	 */
-	public void ListenerManager() {
-		/* Join event done by using a Listener */
-		Listener joinEvent = new OnJoin(this.main);
-		PluginManager joinEventPM = getServer().getPluginManager();
-		joinEventPM.registerEvents(joinEvent, this.main);
+	public void ListenerManager(HideAndSeek main, JavaPlugin instance) {
+		Listener joinEvent = new OnJoin(main);
+		PluginManager joinEventPM = instance.getServer().getPluginManager();
+		joinEventPM.registerEvents(joinEvent, main);
 		
-		/* Leave event done by using a Listener */
 		Listener leaveEvent = new OnLeave();
-		PluginManager leaveEventPM = getServer().getPluginManager();
-		leaveEventPM.registerEvents(leaveEvent, this.main);
+		PluginManager leaveEventPM = instance.getServer().getPluginManager();
+		leaveEventPM.registerEvents(leaveEvent, main);
 		
 		Listener moveEvent = new OnMovement();
-		PluginManager moveEventPM = getServer().getPluginManager();
-		moveEventPM.registerEvents(moveEvent, this.main);
+		PluginManager moveEventPM = instance.getServer().getPluginManager();
+		moveEventPM.registerEvents(moveEvent, main);
 		
 		Listener onBreak = new OnBreak();
-		PluginManager onBreakPM = getServer().getPluginManager();
-		onBreakPM.registerEvents(onBreak, this.main);
+		PluginManager onBreakPM = instance.getServer().getPluginManager();
+		onBreakPM.registerEvents(onBreak, main);
+		
+		Listener onInteract = new OnInteract();
+		PluginManager onInteractPM = instance.getServer().getPluginManager();
+		onInteractPM.registerEvents(onInteract, main);
+		
+		Listener onInv = new OnInv();
+		PluginManager onInvPM = instance.getServer().getPluginManager();
+		onInvPM.registerEvents(onInv, main);
 	}
 }

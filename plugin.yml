@@ -1,4 +1,5 @@
 name: HideAndSeek
 version: 1.0
 author: EternalRat
+api-version: 1.16
 main: fr.eter.hideandseek.HideAndSeek
