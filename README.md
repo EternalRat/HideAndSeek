@@ -1,6 +1,6 @@
 # HideAndSeek
 
-Completion : <progress max="100" value="95"> 95% </progress> (manque le GUI pour les sons + en phase de test)
+Completion : <progress max="100" value="95"> 95% </progress> (need to be tested)
 
 ## [📖 Presentation 📖]
 
@@ -9,7 +9,7 @@ It's an Hide And Seek.
 
 This plugin has been made by myself, EternalRat.
 
-The goal of this plugin is to reproduce the game "Hide and seek" (the real life one) where you need to hide from someone.
+The goal of this plugin is to reproduce the game "Hide and seek" (the real life one) where you need to hide from someone, but there's one more mechanic that I did (from Garry's Mod), someone invisible for too long will play a random song, but you can also decide to play one if you want to help the hunter.
 
 ## [⚽ Goal ⚽]
 

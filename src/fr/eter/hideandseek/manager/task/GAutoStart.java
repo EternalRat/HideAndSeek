@@ -61,7 +61,7 @@ public class GAutoStart extends BukkitRunnable {
 			StateManager.setState(GStates.HUNT);
 			GPlayerMove moveCycle = new GPlayerMove();
 			moveCycle.runTaskTimer(this.main, 0, 3);
-			GChase cycle = new GChase(this.main);
+			GChase cycle = new GChase();
 			cycle.runTaskTimer(this.main, 0, 20);
 			cancel();
 		}

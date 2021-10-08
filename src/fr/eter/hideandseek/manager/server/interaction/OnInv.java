@@ -6,7 +6,6 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
-import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryView;
 import org.bukkit.inventory.ItemStack;
 
@@ -14,14 +13,13 @@ public class OnInv implements Listener {
 
 	@EventHandler
 	public void onInv(InventoryClickEvent evt) {
-		Inventory inv = evt.getInventory();
 		InventoryView invView = evt.getView();
 		Player p = (Player) evt.getWhoClicked();
 		ItemStack item = evt.getCurrentItem();
 		
 		if (item == null) return;
 		
-		if (invView.getTitle().equalsIgnoreCase("Différents sons")) {
+		if (invView.getTitle().equalsIgnoreCase("Diffï¿½rents sons")) {
 			evt.setCancelled(true);
 			p.closeInventory();
 			Material[] materials = new Material[] {Material.DRAGON_EGG, Material.ENDERMAN_SPAWN_EGG, Material.DROWNED_SPAWN_EGG, Material.ZOMBIE_SPAWN_EGG, Material.WOLF_SPAWN_EGG, Material.BLAZE_SPAWN_EGG,

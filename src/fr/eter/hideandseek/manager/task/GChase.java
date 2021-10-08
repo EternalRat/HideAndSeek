@@ -4,17 +4,13 @@ import org.bukkit.Bukkit;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import fr.eter.hideandseek.GStates;
-import fr.eter.hideandseek.HideAndSeek;
 import fr.eter.hideandseek.utils.PlayerManager;
 import fr.eter.hideandseek.utils.StateManager;
 
 public class GChase extends BukkitRunnable {
 
 	private int timer = 600;
-	private HideAndSeek main;
-
-	public GChase(HideAndSeek main) {
-		this.main = main;
+	public GChase() {
 	}
 
 	@Override

@@ -7,6 +7,7 @@ import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.potion.PotionEffectType;
 
 import fr.eter.hideandseek.GStates;
+import fr.eter.hideandseek.utils.PlayerManager;
 import fr.eter.hideandseek.utils.PlayerMoving;
 import fr.eter.hideandseek.utils.StateManager;
 
@@ -19,7 +20,7 @@ public class OnMovement implements Listener {
 	 */
 	@EventHandler
 	public void onMovement(PlayerMoveEvent e) {
-		if (!StateManager.isState(GStates.HUNT)) return;
+		if (!StateManager.isState(GStates.HUNT) || PlayerManager.getHunter() == e.getPlayer()) return;
 		Player player = e.getPlayer();
 		if (PlayerMoving.isInList(player)) {
 			PlayerMoving.replaceTimer(player, System.currentTimeMillis());
